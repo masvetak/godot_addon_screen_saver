@@ -3,6 +3,10 @@
 const SCREEN_SAVER_BORDER_SCENE = preload("screen_saver_border/screen_saver_border.tscn")
 const SCREEN_SAVER_LOGO_SCENE = preload("screen_saver_logo/screen_saver_logo.tscn")
 
+@export var logo: Texture = null:
+	set(new_value):
+		logo = new_value
+		_ui_update()
 @export var background_color: Color = Color.BLACK:
 	set(new_value):
 		background_color = new_value
@@ -30,6 +34,11 @@ func _ui_update_init() -> void:
 	
 	_border.border_size = self.size
 
+func _ui_update_logo() -> void:
+	if _logo == null: return
+	
+	_logo.texture = logo
+
 func _ui_update_background_color() -> void:
 	if self == null: return
 	
@@ -43,5 +52,6 @@ func _ui_update_run_in_editor() -> void:
 
 func _ui_update() -> void:
 	_ui_update_init()
+	_ui_update_logo()
 	_ui_update_background_color()
 	_ui_update_run_in_editor()

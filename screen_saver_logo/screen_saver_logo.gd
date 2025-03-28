@@ -1,5 +1,9 @@
 @tool class_name ScreenSaverLogo extends CharacterBody2D
 
+@export var texture: Texture = null:
+	set(new_value):
+		texture = new_value
+		_update()
 @export var initial_position: Vector2 = Vector2(720, 540):
 	set(new_value):
 		initial_position = new_value
@@ -15,6 +19,8 @@
 
 var _velocity: Vector2 = initial_velocity
 
+@onready var _logo: TextureRect = %Logo
+
 func _ready() -> void:
 	_update()
 
@@ -23,6 +29,11 @@ func _physics_process(delta: float) -> void:
 	var collision_info = move_and_collide(delta * _velocity)
 	if collision_info:
 		_velocity = _velocity.bounce(collision_info.get_normal())
+
+func _update_logo() -> void:
+	if _logo == null: return
+	
+	_logo.texture = texture
 
 func _update_initial_position() -> void:
 	if self == null: return
@@ -35,5 +46,6 @@ func _update_initial_velocity() -> void:
 	_velocity = initial_velocity
 
 func _update() -> void:
+	_update_logo()
 	_update_initial_position()
 	_update_initial_velocity()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://4yivbdtfgnrn"]
 
-[ext_resource type="Script" path="res://addons/godot_addon_screen_saver/screen_saver_border/screen_saver_border.gd" id="1_2cb66"]
+[ext_resource type="Script" uid="uid://4otipjv5hudj" path="res://addons/godot_addon_screen_saver/screen_saver_border/screen_saver_border.gd" id="1_2cb66"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2n6s"]
 size = Vector2(1456, 8)
