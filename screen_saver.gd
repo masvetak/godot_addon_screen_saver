@@ -29,9 +29,11 @@ func _ready() -> void:
 	_ui_update()
 
 func _ui_update_init() -> void:
+	if self == null: return
 	if _border == null: return
 	if _logo == null: return
 	
+	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_border.border_size = self.size
 
 func _ui_update_logo() -> void:
