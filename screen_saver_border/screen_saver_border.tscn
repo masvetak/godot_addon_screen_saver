@@ -1,15 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://4yivbdtfgnrn"]
 
-[ext_resource type="Script" uid="uid://b56ye5hufn4ft" path="res://addons/godot_addon_screen_saver/screen_saver_border/screen_saver_border.gd" id="1_2cb66"]
+[ext_resource type="Script" uid="uid://4otipjv5hudj" path="res://addons/godot_addon_screen_saver/screen_saver_border/screen_saver_border.gd" id="1_2cb66"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2n6s"]
-size = Vector2(1456, 8)
+size = Vector2(1936, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmdam"]
 size = Vector2(8, 1096)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wei8t"]
-size = Vector2(1456, 8)
+size = Vector2(1936, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0eyjv"]
 size = Vector2(8, 1096)
