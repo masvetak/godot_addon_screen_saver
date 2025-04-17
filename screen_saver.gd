@@ -26,14 +26,19 @@ func _ready() -> void:
 	_logo = SCREEN_SAVER_LOGO_SCENE.instantiate()
 	self.add_child(_logo)
 	
+	self.gui_input.connect(_on_gui_input)
+	
 	_ui_update()
+
+func _on_gui_input(_event: InputEvent) -> void:
+	if self.visible: self.visible = false
 
 func _ui_update_init() -> void:
 	if self == null: return
 	if _border == null: return
 	if _logo == null: return
 	
-	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	self.mouse_filter = Control.MOUSE_FILTER_STOP
 	_border.border_size = self.size
 
 func _ui_update_logo() -> void:
