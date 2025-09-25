@@ -17,9 +17,6 @@
 func _ready() -> void:
 	_ui_update()
 
-func _on_background_resized() -> void:
-	_ui_update()
-
 func _ui_update_collision_shape() -> void:
 	if _collision_shape_top == null: return
 	if _collision_shape_right == null: return

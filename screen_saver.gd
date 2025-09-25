@@ -27,18 +27,24 @@ func _ready() -> void:
 	self.add_child(_logo)
 	
 	self.gui_input.connect(_on_gui_input)
+	self.resized.connect(_on_resized)
 	
 	_ui_update()
 
 func _on_gui_input(_event: InputEvent) -> void:
 	if self.visible: self.visible = false
 
+func _on_resized() -> void:
+	_ui_update_border_size()
+
 func _ui_update_init() -> void:
 	if self == null: return
-	if _border == null: return
-	if _logo == null: return
 	
 	self.mouse_filter = Control.MOUSE_FILTER_STOP
+
+func _ui_update_border_size() -> void:
+	if _border == null: return
+	
 	_border.border_size = self.size
 
 func _ui_update_logo() -> void:
@@ -59,6 +65,7 @@ func _ui_update_run_in_editor() -> void:
 
 func _ui_update() -> void:
 	_ui_update_init()
+	_ui_update_border_size()
 	_ui_update_logo()
 	_ui_update_background_color()
 	_ui_update_run_in_editor()
