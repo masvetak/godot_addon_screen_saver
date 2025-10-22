@@ -8,7 +8,7 @@
 	set(new_value):
 		initial_position = new_value
 		_update()
-@export var initial_velocity: Vector2 = Vector2(200, 200):
+@export var initial_velocity: Vector2 = Vector2(1000, 1000):
 	set(new_value):
 		initial_velocity = new_value
 		_update()

@@ -3,23 +3,27 @@
 [ext_resource type="Script" uid="uid://csf6bjw52gb72" path="res://addons/godot_addon_screen_saver/screen_saver_logo/screen_saver_logo.gd" id="1_pple6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3swr3"]
-size = Vector2(256, 256)
+size = Vector2(640, 200)
 
 [node name="ScreenSaverLogo" type="CharacterBody2D"]
-position = Vector2(720, 540)
+physics_interpolation_mode = 1
+position = Vector2(560, 540)
 script = ExtResource("1_pple6")
+initial_position = Vector2(560, 540)
+initial_velocity = Vector2(200, 200)
 
 [node name="Logo" type="TextureRect" parent="."]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(640, 200)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -160.0
-offset_top = -160.0
+offset_top = -50.0
 offset_right = 160.0
-offset_bottom = 160.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch_mode = 5
